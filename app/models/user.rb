@@ -8,4 +8,5 @@ class User < ApplicationRecord
             uniqueness: { case_sensitive: false },
             format: { with: VALID_EMAIL_REGEX }
   has_secure_password
+  validates_format_of :color, with: /\A#?(?:[A-F0-9]{3}){1,2}\z/i
 end
